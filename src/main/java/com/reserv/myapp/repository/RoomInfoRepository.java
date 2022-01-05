@@ -8,12 +8,12 @@ import javax.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.reserv.myapp.model.NoticeVO;
+import com.reserv.myapp.model.RoomInfoVO;
 
 
-public interface NoticeRepository extends JpaRepository<NoticeVO, Long> {
+public interface RoomInfoRepository extends JpaRepository<RoomInfoVO, Long> {
 
-	NoticeVO findByNo(int no);
+	RoomInfoVO findByNo(int no);
 
 
 }

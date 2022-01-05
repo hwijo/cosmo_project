@@ -4,6 +4,9 @@ package com.reserv.myapp.model;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 //　お知らせ
 
 @Entity
@@ -11,20 +14,24 @@ import javax.persistence.*;
 public class NoticeVO {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long no;
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private int no;
 		
 	private String title;
 	private String contents;
 	private String deleteFlg;
+	
+	@CreationTimestamp // insert시 현재 시간을 읽어서 저장
 	private Date createdAt;
+	
+	@UpdateTimestamp // update시 현재 시간을 읽어서 저장
 	private Date updatedAt;
 	private int buildCd;
 	
-	public long getNo() {
+	public int getNo() {
 		return no;
 	}
-	public void setNo(long no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 
