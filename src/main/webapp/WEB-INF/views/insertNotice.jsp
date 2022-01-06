@@ -11,7 +11,7 @@
 　　　　   <div align="center">
           <h2>등록/수정</h2>
       </div>
-			<form id="createForm" name="create" action="/createNotice" method="post">
+			<form id="insertForm" name="insert" action="/insertNotice" method="post">
 			<table class="table table-bordered">				
 			    <tr>
 					<td class="text-center"><strong>제목</strong></td>		
@@ -24,51 +24,11 @@
 				
 				</table>
 				<div class="d-grid gap-2 col-6 mx-auto">
-					<button type="button" onclick="writeSubmit()" class="btn btn-primary float-right">등록</button>
+					<button type="submit" class="btn btn-primary float-right">등록</button>
 				</div>		
 			</form>
 
 
 </div>
 
-<script type="text/javascript">
-	//게시판 등록
-	function writeSubmit(){
-
-		//step2. 게시판 등록
-		var params = {
-			 title : $.trim($("#title").val())
-			,contents : $.trim($("#contents").val())
-			//,regId : $("#loginId").val()
-			//,useYn : 'Y'
-		}
-
-        console.log(params);
-
-		if(params.title == ""){
-			alert("제목을 입력해주세요.");
-			return false;
-		}
-
-		else if(params.contents == ""){
-			alert("내용을 입력해주세요.");
-			return false;
-		}
-
-		$.ajax({
-	         type : 'POST'
-	        ,url : "/createNotice"
-	        ,dataType : 'json'
-	        ,data : JSON.stringify(params)
-	        ,contentType: 'application/json'
-	        ,success : function(result) {
-				alert("해당글이 정상적으로 등록되었습니다.");
-				location.href="/";
-	        },
-	        error: function(request, status, error) {
-
-	        }
-	    })
-	}
-</script>
 

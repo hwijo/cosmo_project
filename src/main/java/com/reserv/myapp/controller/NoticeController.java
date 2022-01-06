@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reserv.myapp.model.NoticeVO;
-import com.reserv.myapp.model.RoomInfoVO;
+import com.reserv.myapp.model.NoticeEntity;
+import com.reserv.myapp.model.RoomInfoEntity;
 import com.reserv.myapp.repository.NoticeRepository;
 import com.reserv.myapp.repository.RoomInfoRepository;
 
@@ -35,12 +35,12 @@ public class NoticeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String noticeList(Model model, HttpServletRequest request) {
 		
-		List<NoticeVO> notice = noticeRepository.findAll();
+		List<NoticeEntity> notice = noticeRepository.findAll();
 		System.out.println("log : " + notice);
 		
 		model.addAttribute("notice", notice);		
 		
-		List<RoomInfoVO> roomList = roomInfoRepository.findAll();
+		List<RoomInfoEntity> roomList = roomInfoRepository.findAll();
 		System.out.println("log : " + roomList);
 		
 		model.addAttribute("roomList", roomList);		
@@ -57,7 +57,7 @@ public class NoticeController {
 		
 		//int no = Integer.parseInt(request.getParameter("no"));
 		
-		NoticeVO sn = noticeRepository.findByNo(no);
+		NoticeEntity sn = noticeRepository.findByNo(no);
 		
 		System.out.println("log : " + sn);
 		
@@ -74,37 +74,37 @@ public class NoticeController {
 		
 	}
 	
-	
-	@RequestMapping(value = "/createNotice", method = RequestMethod.GET)
-	public String inCreateNotice(Model model, HttpServletRequest request) {
-				
-		return "createNotice";		
+	// 공지사항 등록 페이지 들어가기
+	@RequestMapping(value = "/insertNotice", method = RequestMethod.GET)
+	public String inInsertNotice(Model model, HttpServletRequest request) {				
+		
+		return "insertNotice";		
 		
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/createNotice", method = RequestMethod.POST)
-	public NoticeVO createNotice(Model model, HttpServletRequest request, @RequestBody NoticeVO vo) {
-		//NoticeVO vo = new NoticeVO();		
+	
+	// 공지사항 등록
+	@RequestMapping(value = "/insertNotice", method = RequestMethod.POST)
+	public String insertNotice(Model model, HttpServletRequest request) {
 		
-		System.out.println(vo);
+		NoticeEntity entity = new NoticeEntity();
 		
 		String title = request.getParameter("title");
 		String contents = request.getParameter("contents");
+				
+		entity.setTitle(title);
+		entity.setContents(contents);
+		entity.setDeleteFlg("0"); // 고정값
+		entity.setBuildCd(2); // 고정값
 		
-		vo.setTitle(title);
-		vo.setContents(contents);
-		vo.setBuildCd(2);	
+		System.out.println("notice 저장 코드 시작");
+		noticeRepository.save(entity);
+		System.out.println("notice 저장 코드 끝");		
 		
-	    noticeRepository.save(vo);
-	   
-		return vo;	
+		return "redirect:/";
+		
 		
 	}	
-	
-		
-
-	
 
 
 }

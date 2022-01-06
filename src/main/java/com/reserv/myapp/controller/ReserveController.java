@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reserv.myapp.model.NoticeVO;
-import com.reserv.myapp.model.RoomInfoVO;
+import com.reserv.myapp.model.NoticeEntity;
+import com.reserv.myapp.model.RoomInfoEntity;
 import com.reserv.myapp.repository.RoomInfoRepository;
 
 

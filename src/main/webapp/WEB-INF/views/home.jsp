@@ -121,7 +121,8 @@ img {
  		    <c:forEach var="roomList" items="${roomList}">
 			<div class="mySlides">
 				<div class="numbertext"></div>
-				<img src="http://placehold.it/500x100" style="width: 100%">
+				<img src="https://img.ddnayo.com/DataImage/0040/acb9c3229d2b4780a2d1adb72fc88cc1.jpg" style="width: 100%">
+				${roomList.images}
 			</div>
             </c:forEach>
 <!-- 			<div class="mySlides">
@@ -159,7 +160,7 @@ img {
 			<div class="row">
 			<c:forEach var="roomList" items="${roomList}">
 				<div class="column">
-					<img class="demo cursor"
+					<img class="demo cursor" src="https://img.ddnayo.com/DataImage/0040/acb9c3229d2b4780a2d1adb72fc88cc1.jpg"
 						style="width: 100%" onclick="currentSlide(${roomList.no})" alt="${roomList.roomTitle}">
 				</div>
 			</c:forEach>	
@@ -214,7 +215,7 @@ img {
     	</c:forEach>
 	    </table>
 	    	<div class="form-group">
-				<button	onclick = "location.href='/createNotice' "class="btn btn-primary" style="float:right">등록</button>
+				<button	onclick = "location.href='/insertNotice' "class="btn btn-primary" style="float:right">등록(관리자전용)</button>
 			</div>
 	    </div>
 

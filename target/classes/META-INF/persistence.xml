@@ -2,8 +2,8 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="reservation">
 	    <class>com.reserv.myapp.model.ConsultationVO</class>
-	    <class>com.reserv.myapp.model.NoticeVO</class>
-	    <class>com.reserv.myapp.model.RoomInfoVO</class>
+	    <class>com.reserv.myapp.model.NoticeEntity</class>
+	    <class>com.reserv.myapp.model.RoomInfoEntity</class>
 	    <class>com.reserv.myapp.model.ReserveVO</class>
 	    <exclude-unlisted-classes>true</exclude-unlisted-classes>
 	
