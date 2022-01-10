@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-public class ConsultationVO {
+public class ConsultationEntity {
 
 	@Id
 	@GeneratedValue

@@ -67,12 +67,6 @@ public class NoticeController {
 		
 	}
 	
-	@RequestMapping(value = "/calendar", method = RequestMethod.GET)
-	public String calendar(Model model, HttpServletRequest request) {
-		
-		return "calendar";		
-		
-	}
 	
 	// 공지사항 등록 페이지 들어가기
 	@RequestMapping(value = "/insertNotice", method = RequestMethod.GET)

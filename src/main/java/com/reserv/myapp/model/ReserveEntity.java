@@ -6,16 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
 @Entity
+@SequenceGenerator(
+        name="RESERVE_SEQ.NEXTVAL", //시퀀스 제너레이터 이름
+        sequenceName="RESERVE_SEQ", //시퀀스 이름
+        initialValue=1, //시작값
+        allocationSize=1 //메모리를 통해 할당할 범위 사이즈
+        )
 @Table(name="reserve")
-public class ReserveVO {
+public class ReserveEntity {
 	
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, //사용할 전략을 시퀀스로  선택
+            generator="RESERVE_SEQ.NEXTVAL" //식별자 생성기를 설정해놓은 시퀀스제너레이터로 설정            
+            )
 	private int no;		
 
 	private int roomNo; // room number, FK
@@ -29,7 +38,7 @@ public class ReserveVO {
 	private int totalcost;  
 	private String cancelFlg;  
 	private String bankName;  
-	private String bankbranchcde;  
+	private String bankBranchCd;  
 	private String bankNo;  
 	private String deleteFlg;  
 	private Date createdAt;
@@ -109,11 +118,11 @@ public class ReserveVO {
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
 	}
-	public String getBankbranchcde() {
-		return bankbranchcde;
+	public String getBankBranchCd() {
+		return bankBranchCd;
 	}
-	public void setBankbranchcde(String bankbranchcde) {
-		this.bankbranchcde = bankbranchcde;
+	public void setBankBranchCde(String bankBranchCd) {
+		this.bankBranchCd = bankBranchCd;
 	}
 	public String getBankNo() {
 		return bankNo;

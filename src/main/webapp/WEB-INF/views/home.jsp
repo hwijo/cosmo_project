@@ -115,14 +115,19 @@ img {
 	<div class="container" style="padding : 50px;"align="center">
 	    <h2>ようこそ！</h2>
 	</div>
+	
+	<div class="form-group">
+		<button	onclick = "location.href='/calendar' "class="btn btn-primary" style="float:right">예약하기</button>
+	</div>
 
         <!-- 슬라이드 -->
 		<div class="container">
  		    <c:forEach var="roomList" items="${roomList}">
 			<div class="mySlides">
 				<div class="numbertext"></div>
-				<img src="https://img.ddnayo.com/DataImage/0040/acb9c3229d2b4780a2d1adb72fc88cc1.jpg" style="width: 100%">
-				${roomList.images}
+<!-- 				<img src="https://img.ddnayo.com/DataImage/0040/acb9c3229d2b4780a2d1adb72fc88cc1.jpg" style="width: 100%"> -->
+				
+				<p style="background-image: url(/WEB-INF/images/aa.jpg);"></p>
 			</div>
             </c:forEach>
 <!-- 			<div class="mySlides">
@@ -222,7 +227,7 @@ img {
 </div>
 
 <script type="text/javascript">
-
+    // 슬라이드
 	var slideIndex = 1;
 	showSlides(slideIndex);
 
