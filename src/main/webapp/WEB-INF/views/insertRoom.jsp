@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td class="text-center"><strong>최대인원</strong></td>		
-					<td colspan="3"><input type="text" required="required" id="maxpeople" name="maxpeople" class="col-sm-9 col-form-label"></td>		
+					<td colspan="3"><input type="text" required="required" id="max" name="max" class="col-sm-9 col-form-label"></td>		
 				</tr>
 				<tr>
 					<td class="text-center"><strong>성인가격</strong></td>		

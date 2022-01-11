@@ -27,18 +27,19 @@ public class ReserveEntity {
             )
 	private int no;		
 
-	private int roomNo; // room number, FK
+	private int roomInfo_No; // room number, FK
 	private String name;
 	private String phone;
 	private String adult;
 	private String child;
 	private String startDate;
 	private String endDate;
+	private String options;
 	private String paymentFlg; 
 	private int totalcost;  
 	private String cancelFlg;  
 	private String bankName;  
-	private String bankBranchCd;  
+	private String bankBranchCde;  
 	private String bankNo;  
 	private String deleteFlg;  
 	private Date createdAt;
@@ -52,11 +53,11 @@ public class ReserveEntity {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public int getRoomNo() {
-		return roomNo;
+	public int getRoomInfo_No() {
+		return roomInfo_No;
 	}
-	public void setRoomNo(int roomNo) {
-		this.roomNo = roomNo;
+	public void setRoomInfo_No(int roomInfo_No) {
+		this.roomInfo_No = roomInfo_No;
 	}
 	public String getName() {
 		return name;
@@ -94,6 +95,12 @@ public class ReserveEntity {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
+	public String getOptions() {
+		return options;
+	}
+	public void setOptions(String options) {
+		this.options = options;
+	}
 	public String getPaymentFlg() {
 		return paymentFlg;
 	}
@@ -118,11 +125,11 @@ public class ReserveEntity {
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
 	}
-	public String getBankBranchCd() {
-		return bankBranchCd;
+	public String getBankBranchCde() {
+		return bankBranchCde;
 	}
-	public void setBankBranchCde(String bankBranchCd) {
-		this.bankBranchCd = bankBranchCd;
+	public void setBankBranchCde(String bankBranchCde) {
+		this.bankBranchCde = bankBranchCde;
 	}
 	public String getBankNo() {
 		return bankNo;

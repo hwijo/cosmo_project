@@ -5,8 +5,8 @@
 	    <class>com.reserv.myapp.model.NoticeEntity</class>
 	    <class>com.reserv.myapp.model.RoomInfoEntity</class>
 	    <class>com.reserv.myapp.model.ReserveEntity</class>
-	    <class>com.reserv.myapp.model.sliderimagesEntity</class>
-	    <class>com.reserv.myapp.model.optionsEntity</class>
+	    <class>com.reserv.myapp.model.SliderimagesEntity</class>
+	    <class>com.reserv.myapp.model.OptionsEntity</class>
 	    <exclude-unlisted-classes>true</exclude-unlisted-classes>
 	
 		<properties>

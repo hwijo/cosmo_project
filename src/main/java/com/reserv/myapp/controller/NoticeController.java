@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.reserv.myapp.model.NoticeEntity;
 import com.reserv.myapp.model.RoomInfoEntity;
+import com.reserv.myapp.model.SliderimagesEntity;
 import com.reserv.myapp.repository.NoticeRepository;
 import com.reserv.myapp.repository.RoomInfoRepository;
+import com.reserv.myapp.repository.SliderimagesRepository;
 
 
 @Controller
@@ -31,6 +33,9 @@ public class NoticeController {
 	@Autowired 
 	RoomInfoRepository roomInfoRepository;
 	
+	@Autowired
+	SliderimagesRepository sliderimagesRepository;
+	
 	// 메인(슬라이드, 공지사항 리스트)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String noticeList(Model model, HttpServletRequest request) {
@@ -40,11 +45,12 @@ public class NoticeController {
 		
 		model.addAttribute("notice", notice);		
 		
-		List<RoomInfoEntity> roomList = roomInfoRepository.findAll();
-		System.out.println("log : " + roomList);
-		
-		model.addAttribute("roomList", roomList);		
-
+		/*
+		 * List<RoomInfoEntity> roomList = roomInfoRepository.findAll();
+		 * System.out.println("log : " + roomList);
+		 * 
+		 * model.addAttribute("roomList", roomList);
+		 */
 		
 		return "home";	
 

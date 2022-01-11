@@ -28,10 +28,10 @@ public class RoomInfoEntity {
 
 	private String roomNum;
 	private String roomTitle;
-	private int maxpeople; // 최대 인수
+	private int max; // 최대 인수
 	private int adultCost;
 	private int childCost;
-	private String explanation; // 설명
+	private String explnation; // 설명
 	private String images;  
 	private String colorCd;  
 	private String deleteFlg;  
@@ -62,11 +62,11 @@ public class RoomInfoEntity {
 	public void setRoomTitle(String roomTitle) {
 		this.roomTitle = roomTitle;
 	}
-	public int getMaxpeople() {
-		return maxpeople;
+	public int getMax() {
+		return max;
 	}
-	public void setMaxpeople(int maxpeople) {
-		this.maxpeople = maxpeople;
+	public void setMax(int max) {
+		this.max = max;
 	}
 	public int getAdultCost() {
 		return adultCost;
@@ -80,11 +80,11 @@ public class RoomInfoEntity {
 	public void setChildCost(int childCost) {
 		this.childCost = childCost;
 	}
-	public String getExplanation() {
-		return explanation;
+	public String getExplnation() {
+		return explnation;
 	}
-	public void setExplanation(String explanation) {
-		this.explanation = explanation;
+	public void setExplnation(String explnation) {
+		this.explnation =explnation;
 	}
 	public String getImages() {
 		return images;

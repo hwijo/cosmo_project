@@ -38,7 +38,10 @@
 
 					<div class="form-group">
 						<label>내용</label>
-						<textarea readonly class="form-control" rows="5">${roomInfo.explanation}</textarea>
+						<textarea readonly class="form-control" rows="5">${roomInfo.explnation}</textarea>
+					</div>
+					<div class="form-group">
+						<p><img src="<c:out value="/images/${roomInfo.images}"/>"></p>
 					</div>
 <%-- 
 					<fmt:formatDate value="${community.community_writeDate}"

@@ -81,10 +81,10 @@ public class RoomInfoController {
 			
 		String roomNum = request.getParameter("roomNum");
 		String roomTitle = request.getParameter("roomTitle");
-		int maxpeople = Integer.parseInt(request.getParameter("maxpeople"));
+		int max = Integer.parseInt(request.getParameter("max"));
 		int adultCost = Integer.parseInt(request.getParameter("adultCost"));
 		int childCost = Integer.parseInt(request.getParameter("childCost"));
-		String explanation = request.getParameter("explanation");
+		String explnation = request.getParameter("explnation");
 		String colorCd = request.getParameter("colorCd");
 		
 		// 파일 업로드 처리
@@ -104,10 +104,10 @@ public class RoomInfoController {
 				
 		entity.setRoomNum(roomNum);		
 		entity.setRoomTitle(roomTitle);
-		entity.setMaxpeople(maxpeople);
+		entity.setMax(max);
 		entity.setAdultCost(adultCost);
 		entity.setChildCost(childCost);
-		entity.setExplanation(explanation);
+		entity.setExplnation(explnation);
 		entity.setImages(fileName);
 		entity.setColorCd(colorCd);
 		
@@ -121,10 +121,7 @@ public class RoomInfoController {
 		return "redirect:/";
 		
 		
-	}	
-	
-	
-	
+	}		
 
 
 
